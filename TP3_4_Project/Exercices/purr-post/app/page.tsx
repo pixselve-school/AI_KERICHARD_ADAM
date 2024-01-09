@@ -6,6 +6,7 @@ import { desc } from "drizzle-orm";
 export default async function Home() {
   const posts = await db.query.posts.findMany({
     orderBy: [desc(postsColumn.id)],
+    limit: 20,
   });
 
   return (
