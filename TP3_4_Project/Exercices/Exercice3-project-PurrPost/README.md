@@ -52,3 +52,13 @@ Nous utilisons une petite base de donnée SQLite pour stocker les messages. Le s
 
 Nous utilisons le modèle [_unitary/toxic-bert_](https://huggingface.co/unitary/toxic-bert) (via [_Xenova/toxic-bert_](https://huggingface.co/Xenova/toxic-bert) 
 pour Transformers.js) qui est un modèle pré-entrainé pour la classification de textes inappropriés.
+
+## 👀 Gestion du bias
+
+Le modèle comporte du biais puisque les données ont étés annotés par des humains.
+
+Ainsi, une personne peut trouver un message discriminatoire alors qu'une autre personne ne le trouvera pas.
+
+De ce fait, nous avons ajouté un bouton qui permet de signaler un message comme inapproprié.
+Ce message ne sera alors plus visible par les autres utilisateurs, mais sera toujours présent dans notre base de données.
+Alors, nous pouvons ré-annoter ce message pour améliorer le modèle (nous n'avons pas inclus cette fonctionnalité dans le projet).
