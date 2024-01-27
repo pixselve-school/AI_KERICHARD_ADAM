@@ -14,6 +14,8 @@ export const postsColumn = sqliteTable("posts", {
     .$type<{ values: string[] }>()
     .default({ values: [] })
     .notNull(),
+  reported: integer("reported", {mode: "boolean"}).notNull().default(false),
+  reportedReason: text("reportedReason"),
 });
 
 export const db = drizzle(client, {

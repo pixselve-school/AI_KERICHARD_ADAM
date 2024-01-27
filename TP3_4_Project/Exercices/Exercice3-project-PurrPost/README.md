@@ -51,6 +51,16 @@ We use a small SQLite database to store messages. The server is managed by Next.
 We use the [_unitary/toxic-bert_](https://huggingface.co/unitary/toxic-bert) model (via [_Xenova/toxic-bert_](https://huggingface.co/Xenova/toxic-bert)
 for Transformers.js) which is a pre-trained model for classifying inappropriate texts.
 
+## 👀 Bias Management
+
+The model contains bias since the data has been annotated by humans.
+
+Therefore, one person might find a message discriminatory while another might not.
+
+As a result, we have added a button that allows users to report a message as inappropriate.
+This message will then no longer be visible to other users but will still be present in our database.
+Then, we can re-annotate this message to improve the model (we have not included this functionality in the project).
+
 ## ✅ Results
 
 The model is quite effective, but it is not perfect. It is not uncommon for it to classify a correct message as inappropriate.
